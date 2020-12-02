@@ -2,7 +2,7 @@
     "stories": [
         {
             "provider": "weather",
-            "config": { "woe": 2358820, "F": true }
+            "config": { "woe": 906057, "F": false }
         },
         {
             "provider": "twitter",
