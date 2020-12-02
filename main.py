@@ -18,13 +18,22 @@ logging.info(f"Generating paper...")
 Goosepaper(
     [
         WikipediaCurrentEventsStoryProvider(),
-        WeatherStoryProvider(woe="2358820", F=False),
+        WeatherStoryProvider(woe="906057",F=false),
         RSSFeedStoryProvider("https://www.npr.org/feed/", limit=5),
-        RSSFeedStoryProvider("https://www.statnews.com/feed/", limit=2),
-        MultiTwitterStoryProvider(["reuters", "bbcWorld", "axios", "NPR"], limit_per=5),
+        RSSFeedStoryProvider("https://www.theatlantic.com/feed/all/", limit=5),
+#        RSSFeedStoryProvider("https://medium.com/feed/@eLife"),
+#	RSSFeedStoryProvider("http://www.nature.com/subjects/microbiology",limit=5),
+#	RSSFeedStoryProvider("https://www.microbiologyresearch.org/rss/content/journal/jmmcr/latestissue?fmt=rss",limit=5),
+        #RSSFeedStoryProvider("https://www.statnews.com/feed/", limit=2),
+        # MultiTwitterStoryProvider(
+        # Pending this issue: https://github.com/j6k4m8/goosepaper/issues/5
+        #    ["reuters", "bbcWorld", "axios", "BethanyAllenEbr", "NPR"], limit_per=5
+        # ),
+	#RSSFeedStoryProvider("http://xkcd.com/atom.xml"),
         RedditHeadlineStoryProvider("news"),
-        RedditHeadlineStoryProvider("todayilearned"),
+        RedditHeadlineStoryProvider("todayilearned")
     ]
+
 ).to_pdf(FNAME)
 logging.info(f"Saved to PDF, now transferring...")
 
